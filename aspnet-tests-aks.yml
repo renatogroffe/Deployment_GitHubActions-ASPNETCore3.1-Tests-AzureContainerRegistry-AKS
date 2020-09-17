@@ -44,6 +44,7 @@ jobs:
         docker build . --file Dockerfile --tag ${{ env.NOME_IMAGEM }}:latest
         docker tag ${{ env.NOME_IMAGEM }}:latest ${{ env.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER
         docker push ${{ env.NOME_IMAGEM }}
+
     - name: Azure Kubernetes Service - set context - Conectando ao cluster
       uses: Azure/aks-set-context@v1
       with:
